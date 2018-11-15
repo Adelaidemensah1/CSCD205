@@ -1,51 +1,26 @@
-[Project]
-FileName=a8.10675011.cc
-Name=Project1
-Type=1
-Ver=2
-ObjFiles=
-Includes=
-Libs=
-PrivateResource=
-ResourceIncludes=
-MakeIncludes=
-Compiler=
-CppCompiler=
-Linker=
-IsCpp=1
-Icon=
-ExeOutput=
-ObjectOutput=
-LogOutput=
-LogOutputEnabled=0
-OverrideOutput=0
-OverrideOutputName=
-HostApplication=
-UseCustomMakefile=0
-CustomMakefile=
-CommandLine=
-Folders=
-IncludeVersionInfo=0
-SupportXPThemes=0
-CompilerSet=0
-CompilerSettings=0000000000000000000000000
-
-[VersionInfo]
-Major=1
-Minor=0
-Release=0
-Build=0
-LanguageID=1033
-CharsetID=1252
-CompanyName=
-FileVersion=
-FileDescription=Developed using the Dev-C++ IDE
-InternalName=
-LegalCopyright=
-LegalTrademarks=
-OriginalFilename=
-ProductName=
-ProductVersion=
-AutoIncBuildNr=0
-SyncProduct=1
-
+#include<iostream>
+using namespace std;
+int main()
+{  int item;
+    cout<<"Enter the number to search\n";
+	cin>>item;
+int list[10]={2,3,4,5,6,7,8,9,10,11};	
+int first = 0;
+int last = 10 - 1;
+int mid;
+bool found = false;
+while (first <= last && !found)
+{
+mid = (first + last) / 2;
+if (list[mid] == item)
+found = true;
+else if (list[mid] > item)
+last = mid - 1;
+else
+first = mid + 1;
+}
+if (found)
+cout<<item<<" found at position "<<mid+1;
+else
+return -1;
+}
